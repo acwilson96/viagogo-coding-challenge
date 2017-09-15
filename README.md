@@ -29,6 +29,7 @@
   * `-v` to have verbose output of world generation.
   * `-m` to have the World coordinates printed on creation. (Shows minimal data about existence of Events)
 * Enter `m` at any point to see the map.
+* Enter `Event` to query a specific event number. (Useful for validating event tickets/location)
 
 ## Future Thoughts
 
