@@ -5,8 +5,9 @@ from Ticket import Ticket
 
 class World:
 
-    def __init__(self, verbose):
+    def __init__(self, verbose, showMap):
         self.events, self.coords  = self.genWorld(verbose)
+        if (showMap): self.printASCII()
 
     # Prints an ASCII version of the World.
     def printASCII(self):
