@@ -41,3 +41,7 @@
 
 ### Larger Data set and Scalability
 * My program is limited in that the runtime of the search algorithm is `O(NlogK)` where N is the number of Events, and K is the number of closest Events to find. This is obviously not ideal, and so perhaps implementing a regional system where a large dataset of Events are clustered into smaller sets of 'regions', such as United Kingdom, or Netherlands, or perhaps even smaller in places like London (where there are bound to be more Events that the Scottish borders). Then when a user queries a coordinate in those region's, the program only queries the Events in that region, to avoid comparisons with the entire world's set of Events.
+
+## Example Output
+
+![Example Output](https://github.com/acwilson96/viagogo-coding-challenge/blob/master/Screen%20Shot%202017-09-15%20at%2021.45.52.png "Example Output")
