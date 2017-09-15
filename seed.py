@@ -1,4 +1,5 @@
 from random import randint
+from random import uniform
 from Event import Event
     
 # Function that generates a world model of Events; returns a list of Events.
@@ -9,7 +10,7 @@ def genWorld():
     coords = []
 
     # Number of Events to generate.
-    numEvents = randint(0, 80)
+    numEvents = randint(10, 80)
 
     # Loop for as many Events as we are generating.
     for i in range(0, numEvents):
@@ -35,8 +36,8 @@ def genCoord():
 
 # Generates a non-zero float with two decimal places.
 def genPrice():
-    return 10.50
+    return round(uniform(10, 400), 2)
 
 # Generates a non-zero integer.
 def genTicketNum():
-    return 5
+    return randint(10, 100000)
