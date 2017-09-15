@@ -1,3 +1,5 @@
+import operator
+
 class Event:
 
     def __init__(self, id, coord, tickets):
@@ -18,13 +20,12 @@ class Event:
             zeros += "0"
         return zeros + str(id)
 
-    # Makes sure that the price has trailing 0's if necessary.
-    def formatPrice(self, price):
-        output = format(price, ',.2f')
-        return str(output)
-
+    # Returns the cheapest ticket available.
+    def getCheapestTicket(self):
+        sortedTickets = sorted(self.tickets, key=operator.attrgetter('price'))
+        return sortedTickets[0]
 
     # Returns a string representation of this Event.
     def toString(self):
         x, y = self.coord
-        return "Event " + self.formatID(self.id) + " - $" + self.formatPrice(self.price)
+        return "Event " + self.formatID(self.id) + " - " + self.getCheapestTicket().toString()
