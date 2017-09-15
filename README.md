@@ -44,4 +44,4 @@
 
 ## Example Output
 
-![Example Output](https://github.com/acwilson96/viagogo-coding-challenge/blob/master/Screen%20Shot%202017-09-15%20at%2021.45.52.png "Example Output")
+![Example Output](https://github.com/acwilson96/viagogo-coding-challenge/blob/master/example_output.png "Example Output")
