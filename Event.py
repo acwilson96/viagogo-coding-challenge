@@ -29,3 +29,23 @@ class Event:
     def toString(self):
         x, y = self.coord
         return "Event " + self.formatID(self.id) + " - " + self.getCheapestTicket().toString()
+
+    def fullInfoString(self):
+
+        numVIP      = 0
+        numPremium  = 0
+        numGeneral  = 0
+
+        for ticket in self.tickets:
+            if (ticket.category == 'VIP'):
+                vipPrice        = ticket.formatPrice(ticket.price)
+                numVIP += 1
+            if (ticket.category == 'Premium'):
+                premiumPrice    = ticket.formatPrice(ticket.price)
+                numPremium += 1
+            if (ticket.category == 'General'):
+                generalPrice    = ticket.formatPrice(ticket.price)
+                numGeneral += 1
+
+        ticketOpts = '  - General Ticket: $' + str(generalPrice) + ' Available: ' + str(numGeneral) + '\n  - Premium Ticket: $' + str(premiumPrice) + ' Available: ' + str(numPremium) + '\n  - VIP Ticket: $' + str(vipPrice) + ' Available: ' + str(numVIP)
+        return "\nEvent " + self.formatID(self.id) + " at " + str(self.coord) + ' with ticket options:\n' + ticketOpts

@@ -1,5 +1,5 @@
 from seed import World
-from eventProvider import closestEvents
+from eventProvider import closestEvents, printEvent
 import sys
 
 # Determine if using Verbose mode.
@@ -31,6 +31,13 @@ while True:
     userCoords = raw_input("Please Input Coordinates:\n\n> ")
     if (userCoords == 'm'):
         world.printASCII()
+    elif (userCoords == 'Event'):
+        userEvent = raw_input("Enter Event number:\n    > ")
+        try:
+            eventNum = int(userEvent)
+        except:
+            print('Invalid Event number')
+        printEvent(eventNum, events)
     else:
         tokens = userCoords.split(',')
 

@@ -1,3 +1,5 @@
+import operator
+
 # Finds the k closest events to coords
 def closestEvents(k, eventsList, coords):
 
@@ -15,3 +17,7 @@ def closestEvents(k, eventsList, coords):
     output = eventDistance[:k]
 
     return output
+
+def printEvent(eventNum, events):
+    sortedEvents = sorted(events, key=operator.attrgetter('id'))
+    print(sortedEvents[eventNum].fullInfoString() + '\n\n')
