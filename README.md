@@ -33,10 +33,10 @@
 ## Future Thoughts
 
 ### Multiple Events at same Location
-* This could potentially cause complications if more than 5 Events exist at once location, meaning that the closest 5 Events would be debatebly incorrect.
+* This could potentially cause complications if more than 5 Events exist at any one location, meaning that the closest 5 Events could be debatebly incorrect.
 * In terms of what I would change with my program:
   * Seeding: I would only have to alter the seeding algorithm to stop checks for existing Events at a given location.
   * Searching: As mentioned prior, we could have the situation where more than 5 Events could exist in one location. We could either display all those Events at that single location, and inform the user that more exist there. Or perhaps show only one Event per location (but inform user that more Events exist at that location). We could also choose to display more than 5 Events, if more than 5 exist in one single location, since it could be hard to determine which of the 5+ Events are 'closest'.
 
 ### Larger Data set and Scalability
-* My program is limited in that the runtime of the search algorithm is `O(NlogK)` where N is the number of Events, and K is the number of closest Events to find. This is obviously not ideal, and so perhaps implementing a regional system where a large dataset of Events are clustered into smaller sets of 'regions', such as United Kingdom, or Netherlands, or perhaps even smaller in places like London (where there are bound to be more Events that the Scottish borders). Then when a user queries a coordinate in those region's, the program only queries the Events in that region, to avoid comparisons with the entire worlds set of Events.
+* My program is limited in that the runtime of the search algorithm is `O(NlogK)` where N is the number of Events, and K is the number of closest Events to find. This is obviously not ideal, and so perhaps implementing a regional system where a large dataset of Events are clustered into smaller sets of 'regions', such as United Kingdom, or Netherlands, or perhaps even smaller in places like London (where there are bound to be more Events that the Scottish borders). Then when a user queries a coordinate in those region's, the program only queries the Events in that region, to avoid comparisons with the entire world's set of Events.
