@@ -28,7 +28,7 @@ print("---------------------------------\n")
 while True:
 
     # Capture the input.
-    userCoords = raw_input("Please Input Coordinates:\n\n> ")
+    userCoords = raw_input("\n\nPlease Input Coordinates:\n\n> ")
     if (userCoords == 'm'):
         world.printASCII()
     elif (userCoords == 'Event'):
