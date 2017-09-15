@@ -8,19 +8,9 @@ def closestEvents(k, eventsList, coords):
         distance = event.manhattanDistanceTo(coords)
         eventDistance.append((distance, event))
     
-    for eventPair in eventDistance:
-            distance, event = eventPair
-            print(event.toString() + ", Distance " + str(distance))
-
     # Sort the list based on distance.
     eventDistance = sorted(eventDistance, key=lambda x: x[0])
-
-    print()
-    for eventPair in eventDistance:
-            distance, event = eventPair
-            print(event.toString() + ", Distance " + str(distance))
-
-    print()
+    
     # Extract the first k elements.
     output = eventDistance[:k]
 
