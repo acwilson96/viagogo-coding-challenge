@@ -6,8 +6,47 @@ from Ticket import Ticket
 class World:
 
     def __init__(self, verbose):
-        self.events  = self.genWorld(verbose)
-    
+        self.events, self.coords  = self.genWorld(verbose)
+
+    # Prints an ASCII version of the World.
+    def printASCII(self):
+
+        print('Printing ASCII of World\n')
+        # Set up each line to print with the y axis numbers.
+        lines = ["" for x in range(21)]
+        linenum = 10
+        for line in range(21):
+            if (linenum < 10 and linenum >= 0):
+                lines[line] += '   ' + str(linenum) + '  '
+            elif (linenum == -10):
+                lines[line] += '  ' + str(linenum) + ' '
+            else:
+                lines[line] += '  ' + str(linenum) + '  '
+            linenum = (linenum - 1)
+
+        # Loop through the coordinate system filling positions with x's or spaces.
+        for x in range(-10,11):
+            for y in [10,9,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10]:
+                coord = (x, y)
+                line = 10 - y
+                if (coord in self.coords):
+                    if (y == 0):
+                        lines[line] += '-x--'
+                    else:
+                        lines[line] += ' x  '
+                else:
+                    if (y == 0):
+                        lines[line] += '----'
+                    elif (x == 0):
+                        lines[line] += ' |  '
+                    else:
+                        lines[line] += '    '
+                
+        print('      -10 -9  -8  -7  -6  -5  -4  -3  -2  -1   0   1   2   3   4   5   6   7   8   9   10 \n')
+        for line in lines:
+            print line
+        print('\n\n')
+
     # Function that generates a world model of Events; returns a list of Events.
     def genWorld(self, verbose):
 
@@ -29,12 +68,14 @@ class World:
                 # Check that this coordinate is not in use.
                 if coord not in coords:
                     # Create a new Event.
+                    if (verbose):
+                        print('\nGenerated Event ' + str(eventID) + ' @ ' + str(coord) + ' with:')
                     event = Event(eventID, coord, self.genTickets(eventID, verbose))
                     # Append this used coordinate, and this new Event to their appropriate lists.
                     coords.append(coord)
                     events.append(event)
                     break
-        return events
+        return events, coords
 
     # Generates a 2D coordinate in a plane ranging from -10 to 10 in both x and y axis.
     def genCoord(self):
@@ -70,8 +111,7 @@ class World:
             ticket = Ticket(i, eventID, 'General', generalTicketPrice)
             output.append(ticket)
 
-        if (verbose):    
-            print('\nGenerated Event ' + str(eventID) + ' with:')
+        if (verbose):
             print(str(numVIPTickets) + ' VIP tickets @ $' + str(vipTicketPrice) + ' a ticket.')
             print(str(numPremiumTickets) + ' Premium tickets @ $' + str(premiumTicketPrice) + ' a ticket.')
             print(str(numGeneralTickets) + ' General tickets @ $' + str(generalTicketPrice) + ' a ticket.')
