@@ -74,6 +74,6 @@ class World:
             print('\nGenerated Event ' + str(eventID) + ' with:')
             print(str(numVIPTickets) + ' VIP tickets @ $' + str(vipTicketPrice) + ' a ticket.')
             print(str(numPremiumTickets) + ' Premium tickets @ $' + str(premiumTicketPrice) + ' a ticket.')
-            print(str(numGeneralTickets) + ' General tickets @ $' + str(premiumTicketPrice) + ' a ticket.')
+            print(str(numGeneralTickets) + ' General tickets @ $' + str(generalTicketPrice) + ' a ticket.')
 
         return output
