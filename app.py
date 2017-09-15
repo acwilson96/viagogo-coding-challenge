@@ -9,26 +9,33 @@ if ('-v' in argv):
 else:
     verboseMode = False
 
+if ('-m' in argv):
+    showMap = True
+else:
+    showMap = False
+
 
 # Get our events.
 numClosest = 5
 world      = World(verboseMode)
 events     = world.events
+if (showMap):
+    world.printASCII()
 
 # Print instructions.
-print("\n\nEnter coordinates in form: x,y\n")
-print("---------------------------------")
+print("Enter coordinates in form: x,y\n")
+print("---------------------------------\n")
 
 # Always run the CLI.
 while True:
 
     # Capture the input.
-    userCoords = raw_input("\n\n\n\nPlease Input Coordinates:\n\n> ")
+    userCoords = raw_input("Please Input Coordinates:\n> ")
     tokens = userCoords.split(',')
 
     # Check correct format of coordinates provided.
     if (len(tokens) < 2 or len(tokens) > 3):
-        print("\nEnter coordinates in form: x,y\n")
+        print("Enter coordinates in form: x,y\n")
         print("------------------------------")
     else:
         try:
