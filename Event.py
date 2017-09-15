@@ -10,3 +10,7 @@ class Event:
         event_x, event_y = self.coord
         x, y = coord
         return abs(event_x - x) + abs(event_y - y)
+
+    def toString(self):
+        x, y = self.coord
+        return "Event " + str(self.id) + " - $" + str(self.price) + ", (" + str(x) + ", " + str(y) + ")"
