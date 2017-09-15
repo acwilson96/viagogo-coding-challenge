@@ -1,11 +1,12 @@
 class Event:
 
-    def __init__(self, id, x, y, price, numTickets):
+    def __init__(self, id, coord, price, numTickets):
         self.id         = id
-        self.x          = x
-        self.y          = y
+        self.coord      = coord
         self.price      = price
         self.numTickets = numTickets
 
-    def manhattanDistanceTo(self, x, y):
-        return abs(self.x - x) + abs(self.y - y)
+    def manhattanDistanceTo(self, coord):
+        event_x, event_y = self.coord
+        x, y = coord
+        return abs(event_x - x) + abs(event_y - y)
