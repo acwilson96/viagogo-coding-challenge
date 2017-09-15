@@ -1,7 +1,10 @@
 from seed import genWorld
+from eventProvider import closestEvents
+
 
 # Get our events.
-events = genWorld()
+events      = genWorld()
+numClosest  = 5
 
 # Print instructions.
 print("\n\nEnter coordinates in form: x,y\n")
@@ -9,18 +12,31 @@ print("---------------------------------")
 
 # Always run the CLI.
 while True:
+
     # Capture the input.
-    userCoords = raw_input("\n\nPlease Input Coordinates:\n\n> ")
+    userCoords = raw_input("\n\n\n\nPlease Input Coordinates:\n\n> ")
     tokens = userCoords.split(',')
 
     # Check correct format of coordinates provided.
     if (len(tokens) < 2 or len(tokens) > 3):
-        print("\Enter coordinates in form: x,y\n")
+        print("\nEnter coordinates in form: x,y\n")
         print("------------------------------")
     else:
         try:
+            # Try to parse the input.
             x_coord = int(tokens[0])
             y_coord = int(tokens[1])
-            print("\nClosest Events to (" + str(x_coord) + ", " + str(y_coord) + "):")
         except:
             print("Input coordinates in form: x,y")
+
+        # Start working with our parsed input.
+        coord   = (x_coord, y_coord)
+        print("\nClosest Events to " + str(coord) + ":")
+
+        # Find Events closest to this coordinate.
+        closeEvents = closestEvents(numClosest, events, coord)
+
+        for eventPair in closeEvents:
+            distance, event = eventPair
+            print(event.toString() + ", Distance " + str(distance))
+
