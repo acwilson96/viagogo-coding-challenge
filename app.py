@@ -1,5 +1,7 @@
-from random import randint
+from seed import genWorld
 
+events = genWorld()
 
-# Number of Events to generate.
-numEvents = randint(0, 80)
+for event in events:
+    print(event.toString())
+
