@@ -1,10 +1,17 @@
 from seed import World
 from eventProvider import closestEvents
+import sys
+
+argv = str(sys.argv)
+if ('-v' in argv):
+    verboseMode = True
+else:
+    verboseMode = False
 
 
 # Get our events.
 numClosest = 5
-world      = World()
+world      = World(verboseMode)
 events     = world.events
 
 # Print instructions.
