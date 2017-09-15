@@ -12,14 +12,14 @@ class Event:
         x, y = coord
         return abs(event_x - x) + abs(event_y - y)
 
-    # Returns a string representation of this Event.
-    def toString(self):
-        x, y = self.coord
-        return "Event " + formatID(self.id) + " - $" + str(self.price)
-
     # Adds preceding zeros to the ID.
     def formatID(self, id):
         zeros = ""
-        for i in range(0, 3 - len(id)):
+        for i in range(0, 3 - len(str(id))):
             zeros += "0"
         return zeros + str(id)
+
+    # Returns a string representation of this Event.
+    def toString(self):
+        x, y = self.coord
+        return "Event " + self.formatID(self.id) + " - $" + str(self.price)
