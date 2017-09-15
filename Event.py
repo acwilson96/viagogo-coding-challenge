@@ -1,9 +1,8 @@
 class Event:
 
-    def __init__(self, id, coord, price, tickets):
+    def __init__(self, id, coord, tickets):
         self.id         = id
         self.coord      = coord
-        self.price      = price
         self.tickets    = tickets
 
     # Returns the Manhattan distance between the provided coordinate and this event.
