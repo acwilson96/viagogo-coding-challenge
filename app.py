@@ -2,6 +2,7 @@ from seed import World
 from eventProvider import closestEvents
 import sys
 
+# Determine if using Verbose mode.
 argv = str(sys.argv)
 if ('-v' in argv):
     verboseMode = True
