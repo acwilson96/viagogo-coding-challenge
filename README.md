@@ -10,4 +10,7 @@
 
 * I decided a ticket could range in price from $10 to $400. This could include tickets to small events like bar entry at $10 to top football matches at $400.
 
-* I decided that the number of tickets an Event could host would be within [50, 100000] I chose 50 as a lower bound in the example of an exclusive VIP event. I chose 100,000 as the upper bound as Old Trafford Stadium has a capacity of roughly 75,000 people, so a stadium in the US could easilly be larger.
+* Events have 3 classes of tickets: [VIP, Premium, General]:
+  * VIP Tickets: [0,100] available, price ranges between $1000 to $50,000
+  * Premium Tickets: [100, 10,000] available, price ranges between $200 to $800.
+  * General Tickets: [10,000, 100,000] available, price ranges between $10 to $200.
