@@ -18,7 +18,7 @@ class World:
         # Number of Events to generate.
         numEvents = randint(10, 80)
         if (verbose):
-            print('Generating ' + numEvents + ' Events.')
+            print('Generating ' + str(numEvents) + ' Events.')
 
         # Loop for as many Events as we are generating.
         for eventID in range(0, numEvents):
@@ -47,8 +47,8 @@ class World:
 
         # Generate number of each Ticket category.
         numVIPTickets       = randint(0, 100)                   # There can be between 0 and 100 VIP Tickets.
-        numPremiumTickets   = randint(100, 10000)               # There can be between 100 and 10,000 Premium Tickets.
-        numGeneralTickets   = randint(10000, 100000)            # There can be between 10,000 and 100,000 General Tickets.
+        numPremiumTickets   = randint(0, 10000)                 # There can be between 0 and 10,000 Premium Tickets.
+        numGeneralTickets   = randint(0, 100000)                # There can be between 0 and 100,000 General Tickets.
 
         # Generate price of each Ticket category.
         vipTicketPrice      = round(uniform(1000, 50000), 2)    # A VIP Ticket is priced between $1,000 and $50,000.
