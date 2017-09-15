@@ -15,4 +15,4 @@ class Event:
     # Returns a string representation of this Event.
     def toString(self):
         x, y = self.coord
-        return "Event " + str(self.id) + " - $" + str(self.price) + ", (" + str(x) + ", " + str(y) + ")"
+        return "Event " + str(self.id) + " - $" + str(self.price) + ", (" + str(x) + ", " + str(y) + ") - Number of Tickets: " + str(self.numTickets)
