@@ -19,7 +19,13 @@ class Event:
             zeros += "0"
         return zeros + str(id)
 
+    # Makes sure that the price has trailing 0's if necessary.
+    def formatPrice(self, price):
+        output = format(price, ',.2f')
+        return str(output)
+
+
     # Returns a string representation of this Event.
     def toString(self):
         x, y = self.coord
-        return "Event " + self.formatID(self.id) + " - $" + str(self.price)
+        return "Event " + self.formatID(self.id) + " - $" + self.formatPrice(self.price)
