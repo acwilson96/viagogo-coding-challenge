@@ -1,10 +1,11 @@
-from seed import genWorld
+from seed import World
 from eventProvider import closestEvents
 
 
 # Get our events.
-events      = genWorld()
-numClosest  = 5
+numClosest = 5
+world      = World()
+events     = world.events
 
 # Print instructions.
 print("\n\nEnter coordinates in form: x,y\n")
