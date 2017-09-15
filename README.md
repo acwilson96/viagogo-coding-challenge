@@ -6,12 +6,13 @@
 
 * Given the coordinate system is essentially a 20x20 grid, this means there are 400 possible 'locations' and event can occur. It would seem sensible that there could be up to 80 possible Events. Having a lower bound of 10 Events seems sensible as it would be unlikely that there are no events happening anywhere in our virutal world.
 
-* Events have 3 classes of tickets: [VIP, Premium, General]:
+* Events have 3 categories of tickets: [VIP, Premium, General]:
+  * I felt that assigning classes to tickets like this meant that tickets of any category can be created in the future. It might have been wise to create a parent class of type Ticket, and then have Sub-Classes for these specific Ticket types. But as I saw no advantage to using this for the purposes of this exercise, I opted to keep the ticket type as a string attribute.
   * VIP Tickets: Up to 100 available, price ranges between $1000 to $50,000
   * Premium Tickets: Up to 10,000 available, price ranges between $200 to $800.
   * General Tickets: Up to 100,000 available, price ranges between $10 to $200.
 
-* It is possible to query for events outside of the World; i.e. -100, -100 or 25,25. It would be easy to prevent this, but letting martians outside of earth know about events is always friendly :)
+* It is possible to query for events outside of the World; i.e. -100, -100 or 25,25. It would be easy to prevent/validate this, but letting our extra-terrestrial friends outside of earth know about events is always friendly :)
 
 ## Installation/Usage
 
@@ -27,6 +28,7 @@
 * Arguments:
   * `-v` to have verbose output of world generation.
   * `-m` to have the World coordinates printed on creation. (Shows minimal data about existence of Events)
+* Enter `m` at any point to see the map.
 
 ## Future Thoughts
 
