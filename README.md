@@ -16,7 +16,7 @@
 ## Installation/Usage
 
 ### Installation
-* Requires python version 2.7.10
+* Tested using Python 2.7.10 on macOS Sierra, and Python 2.7.11 on Ubuntu 16.04
 * Open the terminal
 * Clone the repo using `git clone https://github.com/acwilson96/viagogo-coding-challenge.git`
 * Change directory to the repo using `cd viagogo-coding-challenge`
