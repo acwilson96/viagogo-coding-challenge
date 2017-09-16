@@ -21,6 +21,7 @@
 * Open the terminal
 * Clone the repo using `git clone https://github.com/acwilson96/viagogo-coding-challenge.git`
 * Change directory to the repo using `cd viagogo-coding-challenge`
+* Works using Python 3.6.2 on Windows 10, by changing the 2 instances of `raw_input` to `input` in app.py
 
 
 ### Usage
